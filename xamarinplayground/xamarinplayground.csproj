@@ -1,0 +1,70 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="4.3.0.947036" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
+    <PackageReference Include="Xamarin.HotReload" Version="1.5.3" />
+    <PackageReference Include="Xam.Plugins.Forms.ImageCircle" Version="3.0.0.5" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="MyPage.xaml" />
+    <EmbeddedResource Remove="AbsoluteLayout.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="MyPage.xaml.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Layouts\" />
+    <Folder Include="Basics\" />
+    <Folder Include="Images\" />
+    <Folder Include="Images\embedded\" />
+    <Folder Include="Images\MarkupExtensions\" />
+    <Folder Include="Navigation\" />
+    <Folder Include="Navigation\Hierarchical\" />
+    <Folder Include="Navigation\Modal\" />
+    <Folder Include="Navigation\Tabbed\" />
+    <Folder Include="Navigation\Carousel\" />
+    <Folder Include="Navigation\Popups\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Basics\MainPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Basics\BindingContext.xaml.cs">
+      <DependentUpon>BindingContext.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Basics\DataBinding.xaml.cs">
+      <DependentUpon>DataBinding.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Basics\DeviceSpecific.xaml.cs">
+      <DependentUpon>DeviceSpecific.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Basics\Slider.xaml.cs">
+      <DependentUpon>Slider.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Images\embedded\bild.jpg" />
+    <None Remove="Images\embedded\Android\drawable\clock.png" />
+    <None Remove="Images\embedded\Android\drawable-xhdpi\clock.png" />
+    <None Remove="Images\embedded\Android\drawable-xxhdpi\clock.png" />
+    <None Remove="Images\embedded\Android\drawable-hdpi\clock.png" />
+    <None Remove="Images\embedded\iOS\clock%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\embedded\bild.jpg" />
+  </ItemGroup>
+</Project>

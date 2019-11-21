@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="xamarinplayground.StackLayout2">
+    <StackLayout>
+         <StackLayout.Margin>
+            <OnPlatform x:TypeArguments="Thickness">
+                <On Platform="iOS" Value="0,40,0,0" />
+                <On Platform="Android, UWP" Value="0,0,0,0" />
+            </OnPlatform>
+        </StackLayout.Margin>
+        <Label Text="My Name" 
+               FontSize="18"
+               FontAttributes="Bold"/>
+        <Image Source="http://lorempixel.com/1920/1080/nature/3/"/>
+        <StackLayout Orientation="Horizontal"
+                     Spacing="20">
+            <Button Text="Like"/>
+            <Button Text="Comment"/>
+            <Button Text="Share"/>
+        </StackLayout>
+        <BoxView Color="#f0f0f0"
+                 HeightRequest="1"/>
+        <Label Text="700 likes" 
+               FontSize="16" 
+               FontAttributes="Bold"/>
+        <Label Text="Very great picture" FontSize="16"/>
+    </StackLayout>
+</ContentPage>

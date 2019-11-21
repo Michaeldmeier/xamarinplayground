@@ -1,0 +1,22 @@
+﻿using System;
+using System.Collections.Generic;
+
+using Xamarin.Forms;
+
+namespace xamarinplayground.Navigation.Modal
+{
+    public partial class WelcomePage : ContentPage
+    {
+        public WelcomePage()
+        {
+            InitializeComponent();
+        }
+
+        async void Handle_Clicked(object sender, System.EventArgs e)
+        {
+            await Navigation.PushModalAsync(new IntroductionPage());
+            // In App.xaml.cs set:
+            // MainPage = new NavigationPage(new Navigation.Modal.WelcomePage());
+        }
+    }
+}

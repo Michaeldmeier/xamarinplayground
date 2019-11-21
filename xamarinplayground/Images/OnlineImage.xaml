@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="xamarinplayground.Images.OnlineImage">
+    <StackLayout>
+        <!-- Automatic caching 24h -->
+        <Image Source="http://lorempixel.com/400/200/sports" />
+        
+        <Image x:Name="image" >
+            <Image.Source>
+                <UriImageSource Uri="http://lorempixel.com/400/200/sports"
+                    CachingEnabled="false"
+                    CacheValidity="00:01:00" /> <!-- dd:hh:mm -->
+            </Image.Source>
+        </Image>
+    </StackLayout>
+</ContentPage>
+ 
