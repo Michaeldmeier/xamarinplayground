@@ -20,14 +20,10 @@ jobs:
         command: build
         projects: '**/*Test*.csproj'
         arguments: '--configuration Release'
-  - task: VSTest@2
+  - task: DotNetCoreCLI@2
     inputs:
-        testSelector: 'testAssemblies'
-        testAssemblyVer2: |
-          **\*Test*.dll
-          !**\*TestAdapter.dll
-          !**\obj\**
-        searchFolder: '$(System.DefaultWorkingDirectory)'
+      command: 'test'
+      projects: '**\*Test*.dll'
 
 - job: Android
   dependsOn: Test
