@@ -5,7 +5,25 @@
 
 jobs:
 
+- job: Test
+  steps:
+  - task: DotNetCoreCLI@2
+    displayName: Build
+    inputs:
+        command: build
+        projects: '**/*Test*.csproj'
+        arguments: '--configuration Release'
+  - task: VSTest@2
+    inputs:
+        testSelector: 'testAssemblies'
+        testAssemblyVer2: |
+          **\*Test*.dll
+          !**\*TestAdapter.dll
+          !**\obj\**
+        searchFolder: '$(System.DefaultWorkingDirectory)'
+
 - job: Android
+  dependsOn: Test
   pool:
     vmImage: 'VS2017-Win2016'
 
@@ -26,14 +44,7 @@ jobs:
       outputDirectory: '$(outputDirectory)'
       configuration: '$(buildConfiguration)'
 
-  - task: VSTest@2
-    inputs:
-      testSelector: 'testAssemblies'
-      testAssemblyVer2: |
-        **\*Test*.dll
-        !**\*TestAdapter.dll
-        !**\obj\**
-      searchFolder: '$(System.DefaultWorkingDirectory)'
+
 
   - task: AndroidSigning@3
     inputs:
@@ -46,6 +57,7 @@ jobs:
       pathtoPublish: '$(outputDirectory)'
 
 - job: iOS
+  dependsOn: Test
   pool:
     vmImage: 'macOS 10.13'
 
@@ -68,12 +80,3 @@ jobs:
       configuration: 'Release'
       buildForSimulator: true
       packageApp: false
-
-  - task: VSTest@2
-    inputs:
-      testSelector: 'testAssemblies'
-      testAssemblyVer2: |
-        **\*Test*.dll
-        !**\*TestAdapter.dll
-        !**\obj\**
-      searchFolder: '$(System.DefaultWorkingDirectory)'    
