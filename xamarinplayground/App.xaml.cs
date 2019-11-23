@@ -10,7 +10,8 @@ namespace xamarinplayground
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Navigation.Hierarchical.WelcomePage());
+            MainPage = new Calculator.MainPage(new Calculator.Calculator());
+            // MainPage = new NavigationPage(new Navigation.Hierarchical.WelcomePage());
         }
 
         protected override void OnStart()

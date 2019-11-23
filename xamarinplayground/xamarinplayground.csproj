@@ -33,6 +33,7 @@
     <Folder Include="Navigation\Tabbed\" />
     <Folder Include="Navigation\Carousel\" />
     <Folder Include="Navigation\Popups\" />
+    <Folder Include="Calculator\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Basics\MainPage.xaml.cs">
@@ -65,5 +66,10 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Images\embedded\bild.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Android">
+      <HintPath>..\..\..\..\..\..\Library\Frameworks\Xamarin.Android.framework\Versions\10.0.6.2\lib\xamarin.android\xbuild-frameworks\MonoAndroid\v9.0\Mono.Android.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>
