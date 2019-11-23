@@ -23,7 +23,7 @@ jobs:
   - task: DotNetCoreCLI@2
     inputs:
       command: 'test'
-      projects: '**\*Test*.dll'
+      projects: '**/*Test*.csproj'
 
 - job: Android
   dependsOn: Test
