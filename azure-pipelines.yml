@@ -73,9 +73,11 @@ jobs:
 
   - task: NuGetToolInstaller@0
 
-  - task: NuGetCommand@2
-    inputs:
-      restoreSolution: '**/*.sln'
+#  - task: NuGetCommand@2
+#    inputs:
+#      restoreSolution: '**/*.sln'
+
+  - script: dotnet restore    
 
   - task: XamariniOS@2
     inputs:
