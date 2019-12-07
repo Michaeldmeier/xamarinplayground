@@ -51,9 +51,8 @@ jobs:
     inputs:
       apkFiles: '**/*.apk'
       apksignerKeystoreFile: 'xamarinplayground.keystore'
-      apksignerKeystorePassword: 'x'
       apksignerKeystoreAlias: 'xamarinplayground'
-      apksignerKeyPassword: 'xamarinplayground'
+      apksignerKeyPassword: '1234567890'
 
   - task: PublishBuildArtifacts@1
     inputs:
