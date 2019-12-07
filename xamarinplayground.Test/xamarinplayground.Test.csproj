@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <Folder Include="Calculator\" />
+    <Folder Include="MVVM\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\xamarinplayground\xamarinplayground.csproj" />

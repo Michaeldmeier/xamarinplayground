@@ -34,6 +34,7 @@
     <Folder Include="Navigation\Carousel\" />
     <Folder Include="Navigation\Popups\" />
     <Folder Include="Calculator\" />
+    <Folder Include="MVVM\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Basics\MainPage.xaml.cs">

@@ -10,7 +10,16 @@ namespace xamarinplayground
         {
             InitializeComponent();
 
-            MainPage = new Calculator.MainPage(new Calculator.Calculator());
+            // Standard
+            // MainPage = new MVVM.MyPage();
+
+            // MVVM
+            MainPage = new MVVM.MyPage(new MVVM.MyPageViewModel());
+
+            // Calculator
+            // MainPage = new Calculator.MainPage(new Calculator.Calculator());
+
+            // Navigation
             // MainPage = new NavigationPage(new Navigation.Hierarchical.WelcomePage());
         }
 
